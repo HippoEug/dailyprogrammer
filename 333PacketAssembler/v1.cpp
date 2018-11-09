@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <sstream>
 #include <string>
 
@@ -20,10 +21,13 @@ struct Packet {
 
 int main() {
 	std::string line;
-
+	
 	Packet packet;
+	
+	std::ifstream textInput;
+	textInput.open("test.txt");
 
-	while (std::getline(std::cin, line)) { // Extracts characters from cin and stores into line until delim or \n is found. Will get next input operation until end of file is reached
+	while (std::getline(textInput, line)) { // Extracts characters from cin and stores into line until delim or \n is found. Will get next input operation until end of file is reached
 		std::stringstream stringIn(line); // Copies line into stringstream ss
 
 		stringIn >> packet.messageID >> packet.packetID >> packet.messageCount >> packet.messageText;
