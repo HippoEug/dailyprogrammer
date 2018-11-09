@@ -38,4 +38,7 @@ int main() {
 		std::cout << packet.messageCount << std::endl;
 		std::cout << packet.messageText << std::endl;
 	}
+	
+	std::cin.get();
+	std::cin.ignore();
 }
